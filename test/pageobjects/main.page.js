@@ -3,13 +3,13 @@ import Page from "./page.js";
 
 class MainPage extends Page {
     get logoWikipedia () {
-        return $('.svg-Wikipedia_wordmark=Wikipedia');
+        return $('.svg-Wikipedia_wordmark');
     }
     get fieldSearch(){
-        return $('#search-input');
+        return $('#searchInput');
     }
     get btnSearch () {
-        return $('>>>.pure-button-primary-progressive');
+        return $('.pure-button-primary-progressive');
     }
 
 
