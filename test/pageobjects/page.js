@@ -15,3 +15,5 @@ export default class Page {
         return browser.url(`https://en.wikipedia.org/wiki/${path}`)
     }
 }
+
+

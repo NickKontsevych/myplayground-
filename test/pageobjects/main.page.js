@@ -12,7 +12,6 @@ class MainPage extends Page {
         return $('.pure-button-primary-progressive');
     }
 
-
     open () {
         return super.open('');
     }
