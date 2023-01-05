@@ -1,5 +1,4 @@
 import MainPage from '../pageobjects/main.page.js'
-import mainPage from "../pageobjects/main.page.js";
 
 describe('Wikipedia main page', () => {
     beforeEach(() => {
@@ -11,9 +10,17 @@ describe('Wikipedia main page', () => {
     })
 
     it('should see Wikipedia page elements', async () => {
+
+        // Assert the logo is existing on a page
         await expect(MainPage.logoWikipedia).toBeExisting();
+
+        // Assert the logo name
         await expect(MainPage.logoWikipedia).toHaveTextContaining("Wikipedia");
-        await expect(mainPage.fieldSearch).toBeExisting()
+
+        // Assert the search field is existing
+        await expect(MainPage.fieldSearch).toBeExisting()
+
+        // Assert the search button is existing
         await expect(MainPage.btnSearch).toBeExisting();
     });
     it('should search for term', async () => {
