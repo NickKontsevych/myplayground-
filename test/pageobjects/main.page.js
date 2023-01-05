@@ -1,20 +1,26 @@
-
 import Page from "./page.js";
 
 class MainPage extends Page {
-    get logoWikipedia () {
-        return $('.svg-Wikipedia_wordmark=Wikipedia');
-    }
-    get fieldSearch(){
-        return $('#search-input');
-    }
-    get btnSearch () {
-        return $('>>>.pure-button-primary-progressive');
+
+    get logoWikipedia() {
+        return $('.svg-Wikipedia_wordmark');
     }
 
+    get fieldSearch() {
+        return $('#searchInput');
+    }
 
-    open () {
+    get btnSearch() {
+        return $('.pure-button-primary-progressive');
+    }
+
+    get getTitle() {
+        return $('.mw-page-title-main');
+    }
+
+    open(path) {
         return super.open('');
     }
 }
-    export default new MainPage();
+
+export default new MainPage();
