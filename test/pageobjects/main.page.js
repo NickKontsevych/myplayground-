@@ -18,7 +18,7 @@ class MainPage extends Page {
         return $('.mw-page-title-main');
     }
 
-    open() {
+    open(path) {
         return super.open('');
     }
 }
