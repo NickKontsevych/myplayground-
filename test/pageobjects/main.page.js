@@ -11,6 +11,9 @@ class MainPage extends Page {
     get btnSearch () {
         return $('.pure-button-primary-progressive');
     }
+    get getTitle () {
+        return $('.mw-page-title-main');
+    }
 
     open () {
         return super.open('');

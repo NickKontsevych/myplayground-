@@ -1,24 +1,22 @@
-
 import MainPage from '../pageobjects/main.page.js'
 import mainPage from "../pageobjects/main.page.js";
-import Pages from "../pageobjects/pages.js";
 
 describe('Wikipedia main page', () => {
     beforeEach(() => {
         MainPage.open();
     });
 
-    after( () => {
+    after(() => {
         browser.closeWindow();
     })
 
-    it('should see Wikipedia page elements', async ()  => {
+    it('should see Wikipedia page elements', async () => {
         await expect(MainPage.logoWikipedia).toBeExisting();
         await expect(MainPage.logoWikipedia).toHaveTextContaining("Wikipedia");
         await expect(mainPage.fieldSearch).toBeExisting()
         await expect(MainPage.btnSearch).toBeExisting();
     });
-    it('should search for term', async ()  => {
+    it('should search for term', async () => {
         let searchTerm = "Apple";
 
         // Find the search input field and enter the search term
@@ -28,7 +26,7 @@ describe('Wikipedia main page', () => {
         await MainPage.btnSearch.click();
 
         // Assert that the search term appears in the page title
-        await expect(Pages.getTitle).toHaveTextContaining(searchTerm)
+        await expect(MainPage.getTitle).toHaveTextContaining(searchTerm)
     });
     it('should search for multiple terms', async () => {
         const SEARCHITEMS = ['Apple', 'Ukraine', 'Love'];
@@ -41,12 +39,10 @@ describe('Wikipedia main page', () => {
             await MainPage.btnSearch.click();
 
             // Assert that the search term appears in the page title
-            await expect(Pages.getTitle).toHaveTextContaining(searchTerm);
+            await expect(MainPage.getTitle).toHaveTextContaining(searchTerm);
 
             // Go back to the main page
             await browser.back();
         }
-
     })
-
 })
